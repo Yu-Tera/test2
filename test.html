@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タブ切り替えの例</title>
+    <style>
+        /* タブメニューのスタイル */
+        .tab {
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab button {
+            background-color: #f1f1f1;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* タブコンテンツのスタイル */
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>タブ切り替えの例</h2>
+
+<!-- タブメニュー -->
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Tab1')">タブ1</button>
+  <button class="tablinks" onclick="openTab(event, 'Tab2')">タブ2</button>
+  <button class="tablinks" onclick="openTab(event, 'Tab3')">タブ3</button>
+</div>
+
+<!-- タブコンテンツ -->
+<div id="Tab1" class="tabcontent">
+  <h3>タブ1のコンテンツ</h3>
+  <p>ここはタブ1のコンテンツです。</p>
+</div>
+
+<div id="Tab2" class="tabcontent">
+  <h3>タブ2のコンテンツ</h3>
+  <p>ここはタブ2のコンテンツです。</p>
+</div>
+
+<div id="Tab3" class="tabcontent">
+  <h3>タブ3のコンテンツ</h3>
+  <p>ここはタブ3のコンテンツです。</p>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        // 全てのタブコンテンツを非表示にする
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // 全てのタブボタンから"active"クラスを削除する
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // 指定されたタブを表示し、クリックされたボタンに"active"クラスを追加する
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
