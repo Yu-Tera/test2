@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>装備アイテム選択</title>
+</head>
+<body>
+    
+    <h1>装備アイテム選択</h1>
+
+    <!-- 大きな枠を選択 -->
+    <label for="category">枠組みを選択:</label>
+    <select id="category">
+        <option value="">--選択してください--</option>
+        <option value="tank">タンク</option>
+        <option value="healer">ヒーラー</option>
+        <option value="dps1">DPS1</option>
+        <option value="dps2">DPS2</option>
+        <option value="dps3">DPS3</option>
+        <option value="range">レンジ</option>
+        <option value="caster">キャスター</option>
+    </select>
+
+    <br><br>
+
+    <!-- 職業を選択 -->
+    <label for="job">職業を選択:</label>
+    <select id="job" disabled>
+        <option value="">--枠組みを先に選択してください--</option>
+    </select>
+
+    <br><br>
+
+    <!-- 装備を選択 -->
+    <div id="items" style="display: none;">
+        <h3>装備アイテムを選択:</h3>
+        <div>
+            <label for="head">頭:</label>
+            <select id="head"></select>
+        </div>
+        <div>
+            <label for="body">胴:</label>
+            <select id="body"></select>
+        </div>
+        <div>
+            <label for="hands">手:</label>
+            <select id="hands"></select>
+        </div>
+        <div>
+            <label for="legs">脚:</label>
+            <select id="legs"></select>
+        </div>
+        <div>
+            <label for="feet">足:</label>
+            <select id="feet"></select>
+        </div>
+        <div>
+            <label for="ears">耳:</label>
+            <select id="ears"></select>
+        </div>
+        <div>
+            <label for="neck">首:</label>
+            <select id="neck"></select>
+        </div>
+        <div>
+            <label for="wrists">腕:</label>
+            <select id="wrists"></select>
+        </div>
+        <div>
+            <label for="rings">指:</label>
+            <select id="rings"></select>
+        </div>
+    </div>
+
+<!-- 外部JavaScriptファイルを読み込む -->
+    <script src="script.js"></script>
+</body>
+</html>
